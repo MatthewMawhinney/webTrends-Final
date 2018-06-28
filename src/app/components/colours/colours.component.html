@@ -1,0 +1,34 @@
+<div class="body">
+  <div id="colours" class="colour-schemes">
+    <div *ngFor="let c of colours" id="{{ c.id }}" (click)="setColour(c)" class="palette" routerLink="{{ c.id }}">
+      <div class="colour-bar1" [ngStyle]="{'background-color': c.color1 }">
+        <h2 [ngStyle]="{'color': c.color2 }">{{ c.paletteName }}</h2>
+      </div>
+      <div class="colour-bar2" [ngStyle]="{'background-color': c.color2 }"></div>
+      <div class="colour-bar3" [ngStyle]="{'background-color': c.color3 }"></div>
+    </div>
+    <div class="coming-soon">
+      <h3>More Colour Palettes Coming Soon...</h3>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngIf="colour">
+      <p> {{ colour.paletteName }}</p>
+      <div class="colour-bar1" [ngStyle]="{'background-color': colour.color1 }"></div>
+      <div class="colour-bar2" [ngStyle]="{'background-color': colour.color2 }"></div>
+      <div class="colour-bar3" [ngStyle]="{'background-color': colour.color3 }"></div>
+    </div>
+    <!--<app-colour-one></app-colour-one>-->
+    <p class="the-title">The Title</p>
+    <p class="the-subheading">The Subheading</p>
+    <p class="the-text">
+      A paragraph of important information abour your site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="the-br"></div>
+    <div role="button" class="the-button">Submit</div>
+    <div role="button" class="the-button-inverse">Submit</div>
+  </div>
+</div>

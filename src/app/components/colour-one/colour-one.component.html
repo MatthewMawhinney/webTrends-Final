@@ -1,0 +1,6 @@
+<div *ngIf="colour">
+  <p> {{ colour.paletteName }}</p>
+  <div class="colour-bar1" [ngStyle]="{'background-color': colour.color1 }"></div>
+  <div class="colour-bar2" [ngStyle]="{'background-color': colour.color2 }"></div>
+  <div class="colour-bar3" [ngStyle]="{'background-color': colour.color3 }"></div>
+</div>
