@@ -1,6 +1,66 @@
-<div *ngIf="colour">
-  <p> {{ colour.paletteName }}</p>
-  <div class="colour-bar1" [ngStyle]="{'background-color': colour.color1 }"></div>
-  <div class="colour-bar2" [ngStyle]="{'background-color': colour.color2 }"></div>
-  <div class="colour-bar3" [ngStyle]="{'background-color': colour.color3 }"></div>
+<div class="content">
+  <div *ngIf="colourOne" class="jumbotron">
+    <h3>Currently viewing the {{ colourOne[0].paletteName }} colour palette</h3>
+    <div class="colour-bar1" [ngStyle]="{'background-color': colourOne[0].color1 }">
+      <p>Accent</p>
+      <p>{{ colourOne[0].color1 }}</p>
+    </div>
+    <div class="colour-bar2" [ngStyle]="{'background-color': colourOne[0].color2 }">
+      <p>Primary</p>
+      <p>{{ colourOne[0].color2 }}</p>
+    </div>
+    <div class="colour-bar3" [ngStyle]="{'background-color': colourOne[0].color3 }">
+      <p>Secondary</p>
+      <p>{{ colourOne[0].color3 }}</p>
+    </div>
+  </div>
+  <div class="the-navbar secondary-bc">
+    <h3 class="accent-col">Branding</h3>
+    <div class="the-links">
+      <p>Home</p>
+    </div>
+  </div>
+  <p class="the-title accent-col">The Title</p>
+  <p class="the-subheading primary-col">The Subheading</p>
+  <p class="the-text">
+    A paragraph of important information abour your site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+    id est laborum.
+  </p>
+  <div class="the-br primary-bc"></div>
+  <div role="button" class="the-button secondary-col primary-bc">Submit</div>
+  <div role="button" class="the-button-inverse accent-bc primary-col">Submit</div>
+  <div class="the-display secondary-bc primary-col">
+    <h2>The Display</h2>
+    <p class="the-text">
+      A paragraph of important information abour your site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+  <div class="the-dark-display primary-bc">
+    <h2>The Inverse Display</h2>
+    <p>
+      A paragraph of important information abour your site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+  <div class="cards">
+    <div class="the-cards accent-bor">
+      <div class="the-circle primary-bc"></div>
+    </div>
+    <div class="the-cards accent-bor">
+      <div class="the-circle primary-bc"></div>
+    </div>
+    <div class="the-cards accent-bor">
+      <div class="the-circle primary-bc"></div>
+    </div>
+  </div>
 </div>

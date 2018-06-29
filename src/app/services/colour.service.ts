@@ -19,7 +19,12 @@ export class ColourService {
     return throwError('Something bad happened');
   }
 
-  getSchemes(): Observable<Colour[]> {
+  getSchemes(query?: string): Observable<Colour[]> {
+    if(query) {
+      return this.http.get<Colour[]>(`http://api.tkusaka.com/palette_api.php?api_key=5b3540c7e9057&palette_id=${query}`).pipe(
+        catchError(this.handleError)
+      );
+    }
     return this.http.get<Colour[]>('http://api.tkusaka.com/palette_api.php?api_key=5b3540c7e9057').pipe(
       catchError(this.handleError)
     );

@@ -12,23 +12,27 @@
     </div>
   </div>
   <div class="content">
-    <div *ngIf="colour">
-      <p> {{ colour.paletteName }}</p>
-      <div class="colour-bar1" [ngStyle]="{'background-color': colour.color1 }"></div>
-      <div class="colour-bar2" [ngStyle]="{'background-color': colour.color2 }"></div>
-      <div class="colour-bar3" [ngStyle]="{'background-color': colour.color3 }"></div>
-    </div>
-    <!--<app-colour-one></app-colour-one>-->
-    <p class="the-title">The Title</p>
-    <p class="the-subheading">The Subheading</p>
-    <p class="the-text">
-      A paragraph of important information abour your site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <div class="the-br"></div>
-    <div role="button" class="the-button">Submit</div>
-    <div role="button" class="the-button-inverse">Submit</div>
+      <h1>Colour Palette Tester</h1>
+      <p>Choose a colour palette from the sidebar to see it in action on the elements below.</p>
+      <form class="form">
+        <input #search type="text" name="search">
+        <button (click)="searchSchemes(search.value)">Search</button>
+      </form>
+      <div *ngIf="coloursSearch" class="jumbotron">
+        <h3>Results: {{ coloursSearch[0].paletteName }} Palette</h3>
+        <div class="lrg" [ngStyle]="{'background-color': coloursSearch[0].color1 }">
+          <p>Accent</p>
+          <p>{{ coloursSearch[0].color1 }}</p>
+        </div>
+        <div class="lrg" [ngStyle]="{'background-color': coloursSearch[0].color2 }">
+          <p>Primary</p>
+          <p>{{ coloursSearch[0].color2 }}</p>
+        </div>
+        <div class="lrg" [ngStyle]="{'background-color': coloursSearch[0].color3 }">
+          <p>Secondary</p>
+          <p>{{ coloursSearch[0].color3 }}</p>
+        </div>
+      </div>
   </div>
+  <router-outlet name="aux"></router-outlet>
 </div>

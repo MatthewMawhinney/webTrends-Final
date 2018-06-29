@@ -2,45 +2,60 @@
     display: flex;
 }
 .colour-bar1, .colour-bar2, .colour-bar3 {
-    height: 40px;
+    height: 150px;
     width: 150px;
-    text-align: right;
-    padding-right: 5px;
-}
-.colour-schemes {
-    height: calc(100vh - 100px);
-    width: 150px;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-flow: column;
-}
-.coming-soon {
     text-align: center;
-    background-color: grey;
-    color: lightgrey;
-    padding: 50px 0;
-    flex: 1 1 auto;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 10px;
 }
-.palette {
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
-.palette::after {
-    content: '';
-    position: absolute;
-    width: 100%; 
-    height: 100%;
-    top:0; 
-    left:0;
-    background:rgba(0,0,0,0.6);
-}
-.palette:hover:after {
-    opacity: 0;
+.jumbotron {
+    text-align: center;
 }
 .content {
-    margin: 0 100px;
+    margin: 40px 100px 100px 100px;
+}
+/****** 
+****
+THE COLOURS TO SWAP
+****
+****/
+.secondary-bc {
+    background-color: lightgrey
+}
+.primary-bc {
+    background-color: grey;
+}
+.secondary-col {
+    color: lightgrey;
+}
+.primary-col {
+    color: grey;
+}
+.accent-col {
+    color: black;
+}
+.accent-bc {
+    background-color: black;
+}
+.accent-bor {
+    border-top: 5px solid black;
+}
+
+.the-navbar {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.the-navbar p {
+    margin: 8px 12px;
+}
+.the-links p {
+    display: inline-block;
 }
 .the-title {
     font-size: 60px;
@@ -49,29 +64,55 @@
 .the-subheading {
     font-size: 36px;
     font-weight: 600;
-    color: grey;
 }
 .the-br {
     height: 2px;
-    background-color: grey;
     margin: 40px auto;
 }
 .the-button {
     border-radius: 4px;
-    background-color: grey;
-    color: lightgrey;
     padding: 15px 40px;
     text-align: center;
     font-weight: 600;
     display: inline-block;
     margin-right: 25px;
+    margin-bottom: 20px;
 }
 .the-button-inverse {
     border-radius: 4px;
-    background-color: lightgrey;
-    color: grey;
     padding: 15px 40px;
     text-align: center;
     font-weight: 600;
     display: inline-block;
+    margin-bottom: 20px;
+}
+.the-display {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+}
+.the-dark-display {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.the-cards {
+    display: inline-block;
+    width: 30%;
+    min-width: 250px;
+    height: 350px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.the-circle {
+    margin: 20px auto;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px
 }

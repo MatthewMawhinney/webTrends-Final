@@ -12,29 +12,25 @@ export class ColoursComponent implements OnInit {
 
   colour: Colour;
   colours: Colour[];
+  coloursSearch: Colour[];
+  error: string;
 
   constructor(
     private router: Router,
     private colourService: ColourService,
     private route: ActivatedRoute
-  ) { 
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        // console.log("router changed")
-        this.setOneColour();
-      }
-    })
-
-  }
+  ) { }
 
   setColour(c: Colour) {
     this.colour = c;
-    //this.setOneColour();
   }
 
-  setOneColour() {
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.colourService.getColourById(id).subscribe(data => this.colour = data);
+  searchSchemes(query: string){
+    this.colourService.getSchemes(query).subscribe(data => this.coloursSearch = data, 
+      error => {
+        this.error = error.name + ": " + error.statusText
+      }
+    );
   }
 
   ngOnInit() {
