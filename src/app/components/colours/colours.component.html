@@ -1,5 +1,8 @@
 <div class="body">
   <div id="colours" class="colour-schemes">
+    <div *ngIf="error">
+      <p>{{ error.name }}</p>
+    </div>
     <div *ngFor="let c of colours" id="{{ c.id }}" (click)="setColour(c)" class="palette" routerLink="{{ c.id }}">
       <div class="colour-bar1" [ngStyle]="{'background-color': c.color1 }">
         <h2 [ngStyle]="{'color': c.color2 }">{{ c.paletteName }}</h2>
@@ -14,11 +17,13 @@
   <div class="content">
       <h1>Colour Palette Tester</h1>
       <p>Choose a colour palette from the sidebar to see it in action on the elements below.</p>
+      <p class="bold">Use the form below to seach for colour palettes by ID.</p>
       <form class="form">
+        <label for="search" class="sr-only">Search for palettes by ID</label>
         <input #search type="text" name="search">
         <button (click)="searchSchemes(search.value)">Search</button>
       </form>
-      <div *ngIf="coloursSearch" class="jumbotron">
+      <div *ngIf="coloursSearch" class="jumbotron" (click)="setColour(coloursSearch[0])" routerLink="{{ coloursSearch[0].id }}">
         <h3>Results: {{ coloursSearch[0].paletteName }} Palette</h3>
         <div class="lrg" [ngStyle]="{'background-color': coloursSearch[0].color1 }">
           <p>Accent</p>

@@ -18,6 +18,10 @@
 }
 .jumbotron {
     text-align: center;
+    cursor: pointer;
+}
+.bold {
+    font-weight: 700;
 }
 .form {
     display: flex;
@@ -110,4 +114,9 @@
     text-align: center;
     font-weight: 600;
     display: inline-block;
+}
+@media all and (max-width: 560px) {
+    .content {
+        margin: 40px 50px 100px 50px;
+    }
 }

@@ -116,3 +116,8 @@ THE COLOURS TO SWAP
     height: 120px;
     width: 120px
 }
+@media all and (max-width: 560px) {
+    .content {
+        margin: 40px 50px 100px 50px;
+    }
+}

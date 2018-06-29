@@ -26,11 +26,7 @@ export class ColoursComponent implements OnInit {
   }
 
   searchSchemes(query: string){
-    this.colourService.getSchemes(query).subscribe(data => this.coloursSearch = data, 
-      error => {
-        this.error = error.name + ": " + error.statusText
-      }
-    );
+    this.colourService.getSchemes(query).subscribe(data => this.coloursSearch = data);
   }
 
   ngOnInit() {
